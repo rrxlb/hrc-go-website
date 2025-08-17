@@ -1,0 +1,381 @@
+/* Accessibility Styles */
+
+/* Reduced Motion Preferences */
+.reduce-motion,
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Preserve essential animations for functionality */
+.reduce-motion .preserve-animation,
+.reduce-motion .preserve-animation *,
+.reduce-motion .preserve-animation *::before,
+.reduce-motion .preserve-animation *::after {
+  animation-duration: revert !important;
+  animation-iteration-count: revert !important;
+  transition-duration: revert !important;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  --casino-black: #000000;
+  --casino-white: #ffffff;
+  --casino-gold: #ffff00;
+  --casino-red: #ff0000;
+  --casino-green: #00ff00;
+  --casino-blue: #0000ff;
+}
+
+.high-contrast * {
+  border-color: currentColor !important;
+  outline-color: currentColor !important;
+}
+
+.high-contrast button,
+.high-contrast [role="button"] {
+  border: 2px solid currentColor !important;
+  background-color: var(--casino-black) !important;
+  color: var(--casino-white) !important;
+}
+
+.high-contrast button:hover,
+.high-contrast [role="button"]:hover,
+.high-contrast button:focus,
+.high-contrast [role="button"]:focus {
+  background-color: var(--casino-white) !important;
+  color: var(--casino-black) !important;
+  border-color: var(--casino-white) !important;
+}
+
+.high-contrast a,
+.high-contrast [role="link"] {
+  color: var(--casino-blue) !important;
+  text-decoration: underline !important;
+}
+
+.high-contrast a:hover,
+.high-contrast [role="link"]:hover,
+.high-contrast a:focus,
+.high-contrast [role="link"]:focus {
+  color: var(--casino-gold) !important;
+  background-color: var(--casino-black) !important;
+}
+
+/* Focus Indicators */
+.focus-visible *:focus {
+  outline: 2px solid var(--casino-gold, #ffd700) !important;
+  outline-offset: 2px !important;
+  border-radius: 4px;
+}
+
+.focus-visible button:focus,
+.focus-visible [role="button"]:focus,
+.focus-visible input:focus,
+.focus-visible select:focus,
+.focus-visible textarea:focus {
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3) !important;
+}
+
+/* Keyboard User Styles */
+.keyboard-user *:focus {
+  outline: 2px solid var(--casino-gold, #ffd700) !important;
+  outline-offset: 2px !important;
+}
+
+.keyboard-user button:focus,
+.keyboard-user [role="button"]:focus {
+  transform: scale(1.05);
+  z-index: 10;
+  position: relative;
+}
+
+/* Screen Reader Mode */
+.screen-reader-mode {
+  /* Ensure all interactive elements are properly labeled */
+}
+
+.screen-reader-mode .sr-only {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0.25rem !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+  background-color: var(--casino-black, #000) !important;
+  color: var(--casino-white, #fff) !important;
+  border: 1px solid var(--casino-gold, #ffd700) !important;
+}
+
+.screen-reader-mode .decorative-only {
+  display: none !important;
+}
+
+/* Skip Links */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--casino-black, #000);
+  color: var(--casino-white, #fff);
+  padding: 8px;
+  text-decoration: none;
+  border: 2px solid var(--casino-gold, #ffd700);
+  border-radius: 4px;
+  z-index: 1000;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Accessible Tooltips */
+.tooltip {
+  position: relative;
+}
+
+.tooltip[aria-describedby]:hover::after,
+.tooltip[aria-describedby]:focus::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--casino-black, #000);
+  color: var(--casino-white, #fff);
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--casino-gold, #ffd700);
+  white-space: nowrap;
+  z-index: 1000;
+  font-size: 0.875rem;
+}
+
+/* Accessible Form Elements */
+.form-field {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: var(--casino-white, #fff);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--casino-gold, #ffd700);
+  border-radius: 4px;
+  background: var(--casino-black, #000);
+  color: var(--casino-white, #fff);
+  font-size: 1rem;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--casino-gold, #ffd700);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+}
+
+.form-field .error {
+  color: var(--casino-red, #ff0000);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.form-field input:invalid,
+.form-field select:invalid,
+.form-field textarea:invalid {
+  border-color: var(--casino-red, #ff0000);
+}
+
+/* Accessible Tables */
+.accessible-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.accessible-table th,
+.accessible-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid var(--casino-gold, #ffd700);
+}
+
+.accessible-table th {
+  background: var(--casino-gold, #ffd700);
+  color: var(--casino-black, #000);
+  font-weight: bold;
+}
+
+.accessible-table tr:nth-child(even) {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.accessible-table tr:hover {
+  background: rgba(255, 215, 0, 0.2);
+}
+
+/* Accessible Buttons */
+.accessible-button {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--casino-gold, #ffd700);
+  border-radius: 4px;
+  background: var(--casino-black, #000);
+  color: var(--casino-white, #fff);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.accessible-button:hover {
+  background: var(--casino-gold, #ffd700);
+  color: var(--casino-black, #000);
+  transform: translateY(-2px);
+}
+
+.accessible-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+}
+
+.accessible-button:active {
+  transform: translateY(0);
+}
+
+.accessible-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading States */
+.loading-accessible {
+  position: relative;
+}
+
+.loading-accessible::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--casino-gold, #ffd700);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.reduce-motion .loading-accessible::after {
+  animation: none;
+  border: 2px solid var(--casino-gold, #ffd700);
+  border-radius: 0;
+  width: 4px;
+  height: 4px;
+}
+
+/* Accessible Navigation */
+.accessible-nav {
+  position: relative;
+}
+
+.accessible-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.accessible-nav li {
+  position: relative;
+}
+
+.accessible-nav a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--casino-white, #fff);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.accessible-nav a:hover,
+.accessible-nav a:focus {
+  background: var(--casino-gold, #ffd700);
+  color: var(--casino-black, #000);
+  border-color: var(--casino-gold, #ffd700);
+}
+
+.accessible-nav a[aria-current="page"] {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: var(--casino-gold, #ffd700);
+}
+
+/* Responsive Text Scaling */
+@media (prefers-reduced-motion: reduce) {
+  .reduce-motion,
+  .reduce-motion *,
+  .reduce-motion *::before,
+  .reduce-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .high-contrast {
+    --casino-black: #000000;
+    --casino-white: #ffffff;
+    --casino-gold: #ffff00;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+}

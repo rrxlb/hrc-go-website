@@ -1,0 +1,86 @@
+{
+  "name": "High Roller Club - Premium Discord Casino",
+  "short_name": "High Roller Club",
+  "description": "Experience the ultimate AI-powered casino in Discord with immersive 3D environments and exclusive VIP gaming.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#1a1a1a",
+  "orientation": "portrait-primary",
+  "categories": ["games", "entertainment", "social"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/casino-main.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "High Roller Club Casino Main View"
+    },
+    {
+      "src": "/screenshots/casino-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "High Roller Club Mobile Experience"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Join Discord",
+      "short_name": "Join",
+      "description": "Join the High Roller Club Discord server",
+      "url": "/join",
+      "icons": [
+        {
+          "src": "/icons/discord-shortcut.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Browse Games",
+      "short_name": "Games",
+      "description": "Explore all casino games",
+      "url": "/games",
+      "icons": [
+        {
+          "src": "/icons/games-shortcut.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
